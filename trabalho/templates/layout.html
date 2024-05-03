@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/admi.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/form_file.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/form_datos.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    </head>
+    <body>
+        <div class="container1">
+            {% if current_user and current_user.rol == Null %}
+            <ul>
+                <li><a href="{{ url_for('index')}}">Iniciar sesion</a></li>
+                <li><a href="{{ url_for('reg')}}">Registrarse</a></li>
+            </ul>
+            {% endif %}
+            {% if current_user and current_user.rol == 1 %}
+            <ul>
+                <li>Bienvenido Administador {{ current_user.nom_comple}}</li>
+                <li><a href="{{ url_for('inicio')}}">Inicio</a></li>
+                <li><a href="{{ url_for('listarUsuarios')}}">Panel de Administador</a></li>
+                <li><a href="{{ url_for('formulario')}}">Añadir </a></li>
+                <li><a href="{{ url_for('listaMenu')}}">Publicaciones </a></li>
+            </ul>
+            {% endif %}
+            {% if current_user and current_user.rol == 2 %}
+            <ul>
+                <li>Bienvenido Usuario {{ current_user.nom_comple}}</li>
+                <li><a href="{{ url_for('inicio')}}">Inicio</a></li>
+                <li><a href="{{ url_for('formulario')}}">Añadir </a></li>
+                <li><a href="{{ url_for('listaMenu')}}">Publicaciones </a></li>
+            </ul>
+            {% endif %}
+        </div>
+        {% block body %}
+        {% endblock  %}
+    </body>
+</html>

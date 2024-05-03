@@ -1,0 +1,33 @@
+{% extends './layout.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block body %}
+    <div class="login">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Iniciar Sesión</h2>
+                <form class="loginForm" action="/login" method="post">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in messages %}
+                                    {{ message }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    <div class="loginInput">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" class="loginControl" id="username" name="username" required>
+                    </div>
+                    <div class="loginInput">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" class="loginControl" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btnPrimary">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

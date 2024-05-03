@@ -1,0 +1,8 @@
+{% extends './layout.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block body  %}
+    <h1>BIENVENIDO, {{ current_user.nom_comple }}</h1>
+    <a class="buttonLO" href="{{ url_for('logout')}}">Logout</a>
+{% endblock %}

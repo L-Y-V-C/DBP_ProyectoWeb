@@ -1,0 +1,49 @@
+{% extends './layout.html' %}
+
+{% block title %}Panel Administrador{% endblock %}
+
+{% block body %}
+  <div class="sidebar">
+      <a href="/listarUsuarios">Lista de usuarios</a>
+      <a href="/listarPublicaciones">Lista de publicaciones</a>
+    </div>
+    {% if usuarios %}
+    <div class="admi-tb">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre usuario</th>
+            <th scope="col">Contraseña</th>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for usuario in usuarios %}
+            <tr>
+              <th scope="row">{{usuario.0}}</th>
+              <td>{{usuario.1}}</td>
+              <td>{{usuario.2}}</td>
+              <td>{{usuario.3}}</td>
+              <td>{{ 'Habilitado' if usuario.4 == 1 else 'Deshabilitado' }}</td>
+              <td>
+                <a href="/editarUsuario/{{ usuario.0 }}" class="boton">Editar</a>
+                <a href="/eliminarUsuario/{{ usuario.0 }}" class="boton">Eliminar</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <h3>Ordenar por usuario</h3>
+      <a href="/listarUsuariosOrdUsuAsc" class="boton">ascendente</a>
+      <a href="/listarUsuariosOrdUsuDesc" class="boton">descendente</a>
+      <h3>Ordenar por nombre</h3>
+      <a href="/listarUsuariosOrdNomAsc" class="boton">ascendente</a>
+      <a href="/listarUsuariosOrdNomDesc" class="boton">descendente</a>
+    </div>
+    {% else %}
+      <p>No existen datos</p>
+    {% endif %}
+  </div>
+{% endblock %}

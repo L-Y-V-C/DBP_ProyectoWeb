@@ -1,0 +1,37 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menurow {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 15px;
+}
+.menuitem {
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.menuitem h2 {
+    margin-top: 0;
+}
+.menuitem img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    border: 3px hidden;
+    transition: border-color 0.3s ease;
+}
+.menuitem img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    border: solid;
+    border-color: #70aaec;
+}
+.menuitem p {
+    margin-bottom: 0;
+}

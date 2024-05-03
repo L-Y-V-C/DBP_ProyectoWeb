@@ -1,0 +1,21 @@
+{% extends './layout.html' %}
+
+{% block title %}Datos publicación{% endblock %}
+  
+{% block body %}
+    <div class="formDatos">
+        <h1>Resultado del Posteo</h1>
+        <div class="formDatosPubli">
+            <div class="Publinombre">
+                <p>Nombre de la publicación: {{ alias }}</p>
+            </div>
+            <div class="Publiimagen">
+                <img src="{{ url_for('static', filename='uploads/' + archivo_nombre) }}" alt="Imagen adjunta">
+            </div>
+            <div class="Publidescripcion">
+                <p>Breve descripción: {{ descripcion }}</p>
+            </div>
+        </div>
+    </div>
+    <a href="{{ url_for('formulario') }}" class="btn-volver">Volver al proceso de POSTEO</a>
+{% endblock %}

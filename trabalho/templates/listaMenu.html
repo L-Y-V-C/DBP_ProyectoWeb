@@ -1,0 +1,25 @@
+{% extends './layout.html' %}
+
+{% block title %}Publicaciones{% endblock %}
+
+{% block body %}
+    {% if publicaciones %}
+        <div class="menu">
+            {% for i in range(0, publicaciones | length, 3) %}
+        <div class="menurow">
+            {% for j in range(i, i + 3) %}
+                {% if j < publicaciones | length %}
+                <div class="menuitem">
+                    <h2>{{ publicaciones[j][1] }}</h2>
+                    <img src="{{ url_for('static', filename='uploads/' + publicaciones[j][3]) }}" alt="{{ publicaciones[j][2] }}">
+                    <p>{{ publicaciones[j][2] }}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>No hay publicaciones</p>
+    {% endif %}
+{% endblock %}

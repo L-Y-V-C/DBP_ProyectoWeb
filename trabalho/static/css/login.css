@@ -1,0 +1,42 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.loginForm {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.loginForm h2 {
+    text-align: center;
+    color: #007bff;
+}
+.loginInput {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.loginInput label {
+    font-weight: bold;
+}
+.loginControl {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+.btnPrimary {
+    width: 100%;
+    margin: 0 10px 10px;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+.btnPrimary:hover {
+    background-color: #0056b3;
+}

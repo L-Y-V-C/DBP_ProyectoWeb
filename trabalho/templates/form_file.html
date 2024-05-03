@@ -1,0 +1,21 @@
+{% extends './layout.html' %}
+
+{% block title %}Publicar foto{% endblock %}
+
+{% block body %}
+    <div class="formFile">
+        <h1>Zona de Posteo</h1>
+        <form method="POST" action="{{ url_for('formulario') }}" enctype="multipart/form-data">
+            <label for="alias">Su nombre para la publicación:</label>
+            <input type="text" id="alias" name="alias" required>
+            <br>
+            <label for="descripcion">Breve descripción de la publicación:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+            <br>
+            <label for="archivo">Archivo:</label>
+            <input type="file" id="archivo" name="archivo" accept=".jpg,.jpeg,.png,.gif">
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+{% endblock %}

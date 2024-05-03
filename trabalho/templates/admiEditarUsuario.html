@@ -1,0 +1,23 @@
+{% extends './layout.html' %}
+
+{% block title %}Panel Edicion{% endblock %}
+
+{% block body %}
+    <div class="admi-tb">
+    <form action="/actualizarUsuario/{{ usuario.0 }}" method="POST">
+        <label for="username">Nombre de usuario</label>
+        <input type="text" name="username" value="{{ usuario.1 }}">
+        <label for="password">Contraseña</label>
+        <input type="text" name="password" value="{{ usuario.2 }}">
+        <label for="nom_comple">Nombre completo</label>
+        <input type="text" name="nom_comple" value="{{ usuario.3 }}">
+        <label for="estado">Estado(1 - Habilitado , 0 - Deshabilitado):</label>
+        <input type="text" name="estado" value="{{ usuario.4 }}">
+        <label for="rol">Rol</label>
+        <input type="text" name="rol" value="{{ usuario.5 }}">
+        
+        <button type="submit">Guardar</button>
+
+    </form>
+    </div>
+{% endblock %}

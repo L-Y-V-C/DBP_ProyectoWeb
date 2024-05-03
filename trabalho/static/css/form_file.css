@@ -1,0 +1,37 @@
+.formFile h1 {
+    text-align: center;
+    color: #333;
+}
+.formFile form {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.formFile label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+.formFile input[type="text"],
+.formFile input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.formFile button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.formFile button[type="submit"]:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,37 @@
+{% extends './layout.html' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block body %}
+    <div class="login">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Registrarse</h2>
+                <form class="loginForm" action="/crear-reg" method="post">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for message in messages %}
+                                    {{ message }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    <div class="loginInput">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" class="loginControl" id="username" name="username" required>
+                    </div>
+                    <div class="loginInput">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" class="loginControl" id="password" name="password" required>
+                    </div>
+                    <div class="loginInput">
+                        <label for="password">Nombre completo:</label>
+                        <input type="text" class="loginControl" id="password" name="nom_comple" required>
+                    </div>
+                    <button type="submit" class="btnPrimary">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
